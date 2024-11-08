@@ -1,0 +1,79 @@
+\doxysection{player Struct Reference}
+\hypertarget{structplayer}{}\label{structplayer}\index{player@{player}}
+
+
+Structure to represent a player in the game.  
+
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structplayer_a7441ef0865bcb3db9b8064dd7375c1ea}{id}}
+\item 
+int \mbox{\hyperlink{structplayer_a9aa790f93d2d067a4f5608fdb8409f94}{hp}}
+\item 
+int \mbox{\hyperlink{structplayer_a78e8f312c31711db6bbfad5dbc53af12}{revealed\+Card}}
+\item 
+struct \mbox{\hyperlink{structcard}{card}} \mbox{\hyperlink{structplayer_ada150dabb89125617fc76db37ba8ca01}{face\+Up\+Card}}
+\item 
+struct \mbox{\hyperlink{structcard}{card}} \mbox{\hyperlink{structplayer_acecad000f0cdea6d9ffd2aa6d80f136a}{face\+Dawn\+Card}}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structplayer_a051688812bbdf2c045aa8ee164ba4efd}{next\+Player}}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structplayer_aee16a2466d22519e4253695bb6006eaa}{previous\+Player}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to represent a player in the game. 
+
+Each player has an ID, health points (hp), two cards (face-\/up and face-\/down), and pointers to the next and previous players in the circular list. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structplayer_acecad000f0cdea6d9ffd2aa6d80f136a}\index{player@{player}!faceDawnCard@{faceDawnCard}}
+\index{faceDawnCard@{faceDawnCard}!player@{player}}
+\doxysubsubsection{\texorpdfstring{faceDawnCard}{faceDawnCard}}
+{\footnotesize\ttfamily \label{structplayer_acecad000f0cdea6d9ffd2aa6d80f136a} 
+struct \mbox{\hyperlink{structcard}{card}} face\+Dawn\+Card}
+
+The player\textquotesingle{}s face-\/down card. \Hypertarget{structplayer_ada150dabb89125617fc76db37ba8ca01}\index{player@{player}!faceUpCard@{faceUpCard}}
+\index{faceUpCard@{faceUpCard}!player@{player}}
+\doxysubsubsection{\texorpdfstring{faceUpCard}{faceUpCard}}
+{\footnotesize\ttfamily \label{structplayer_ada150dabb89125617fc76db37ba8ca01} 
+struct \mbox{\hyperlink{structcard}{card}} face\+Up\+Card}
+
+The player\textquotesingle{}s face-\/up card. \Hypertarget{structplayer_a9aa790f93d2d067a4f5608fdb8409f94}\index{player@{player}!hp@{hp}}
+\index{hp@{hp}!player@{player}}
+\doxysubsubsection{\texorpdfstring{hp}{hp}}
+{\footnotesize\ttfamily \label{structplayer_a9aa790f93d2d067a4f5608fdb8409f94} 
+int hp}
+
+Player\textquotesingle{}s health points. \Hypertarget{structplayer_a7441ef0865bcb3db9b8064dd7375c1ea}\index{player@{player}!id@{id}}
+\index{id@{id}!player@{player}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{structplayer_a7441ef0865bcb3db9b8064dd7375c1ea} 
+int id}
+
+Player\textquotesingle{}s unique ID. \Hypertarget{structplayer_a051688812bbdf2c045aa8ee164ba4efd}\index{player@{player}!nextPlayer@{nextPlayer}}
+\index{nextPlayer@{nextPlayer}!player@{player}}
+\doxysubsubsection{\texorpdfstring{nextPlayer}{nextPlayer}}
+{\footnotesize\ttfamily \label{structplayer_a051688812bbdf2c045aa8ee164ba4efd} 
+struct \mbox{\hyperlink{structplayer}{player}}\texorpdfstring{$\ast$}{*} next\+Player}
+
+Pointer to the next player in the game. \Hypertarget{structplayer_aee16a2466d22519e4253695bb6006eaa}\index{player@{player}!previousPlayer@{previousPlayer}}
+\index{previousPlayer@{previousPlayer}!player@{player}}
+\doxysubsubsection{\texorpdfstring{previousPlayer}{previousPlayer}}
+{\footnotesize\ttfamily \label{structplayer_aee16a2466d22519e4253695bb6006eaa} 
+struct \mbox{\hyperlink{structplayer}{player}}\texorpdfstring{$\ast$}{*} previous\+Player}
+
+Pointer to the previous player in the game. \Hypertarget{structplayer_a78e8f312c31711db6bbfad5dbc53af12}\index{player@{player}!revealedCard@{revealedCard}}
+\index{revealedCard@{revealedCard}!player@{player}}
+\doxysubsubsection{\texorpdfstring{revealedCard}{revealedCard}}
+{\footnotesize\ttfamily \label{structplayer_a78e8f312c31711db6bbfad5dbc53af12} 
+int revealed\+Card}
+
+Indicates whether the face-\/down card has been revealed (1 = true, 0 = false). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{project1_8c}{project1.\+c}}\end{DoxyCompactItemize}

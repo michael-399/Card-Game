@@ -1,0 +1,228 @@
+\doxysection{project1.\+c File Reference}
+\hypertarget{project1_8c}{}\label{project1_8c}\index{project1.c@{project1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcard}{card}}
+\begin{DoxyCompactList}\small\item\em Structure to represent a card with a type and suit. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structplayer}{player}}
+\begin{DoxyCompactList}\small\item\em Structure to represent a player in the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{project1_8c_a1bd20d77668c7c4fa9a0af3f657acd6f}{print\+Deck}} (struct \mbox{\hyperlink{structcard}{card}} deck\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Prints the entire deck of cards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{project1_8c_aea7f4291f20fc6e11c2a1ae8afafba1a}{shuffle\+Deck}} (struct \mbox{\hyperlink{structcard}{card}} deck\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Shuffles the deck of cards randomly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{project1_8c_a42a7ebee71b92a435480c1468111c7af}{give\+Cards}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}first\+Player, struct \mbox{\hyperlink{structcard}{card}} deck\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Deals two cards (face-\/up and face-\/down) to each player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{project1_8c_a4b5da8954bdf65561f8bc5812a3e8113}{print\+Players\+Properties}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}first\+Player)
+\begin{DoxyCompactList}\small\item\em Prints the properties (ID, hp, cards) of all players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{project1_8c_a11faed6b9a30675523bf6a5efa91fc8d}{apply\+Card}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}current\+Player, char card\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Applies the effect of the player\textquotesingle{}s card based on its type. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{project1_8c_a14d596721de741d0ca0ab4bd4ceb1e78}{get\+Input}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}current\+Player)
+\begin{DoxyCompactList}\small\item\em Asks the player if they want to flip their face-\/down card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{project1_8c_a1a7c7980bad75a726612c987f2d42431}{update\+Game}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}first\+Player)
+\begin{DoxyCompactList}\small\item\em Updates the game state for each player\textquotesingle{}s turn. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{project1_8c_a09ff1f791a918f58cdebcbc910e27f07}{delete\+Players}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}current\+Player, int \texorpdfstring{$\ast$}{*}num\+Of\+Players\+Left)
+\begin{DoxyCompactList}\small\item\em Eliminates players with 0 or fewer health points and updates the circular list of players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{project1_8c_ac4cbac787826b84b2252d3efea5e73c0}{reset\+Ability}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}first\+Player)
+\begin{DoxyCompactList}\small\item\em Resets the \textquotesingle{}revealed\+Card\textquotesingle{} ability of all players to 0 (not revealed). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{project1_8c_a0e594b12de7b9884c6332454b1fd5df0}{pick\+Player}} (struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}first\+Player)
+\begin{DoxyCompactList}\small\item\em Selects a random player to start the next turn. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{project1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{project1_8c_a175a8104e5b8135d7e8492cc2d258c2e}{hp\+On\+Table}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{project1_8c_a11faed6b9a30675523bf6a5efa91fc8d}\index{project1.c@{project1.c}!applyCard@{applyCard}}
+\index{applyCard@{applyCard}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{applyCard()}{applyCard()}}
+{\footnotesize\ttfamily \label{project1_8c_a11faed6b9a30675523bf6a5efa91fc8d} 
+void apply\+Card (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{current\+Player}{, }\item[{char}]{card\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Applies the effect of the player\textquotesingle{}s card based on its type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Player} & Pointer to the current player. \\
+\hline
+{\em card\+\_\+type} & The type of card being played. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{project1_8c_a09ff1f791a918f58cdebcbc910e27f07}\index{project1.c@{project1.c}!deletePlayers@{deletePlayers}}
+\index{deletePlayers@{deletePlayers}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{deletePlayers()}{deletePlayers()}}
+{\footnotesize\ttfamily \label{project1_8c_a09ff1f791a918f58cdebcbc910e27f07} 
+struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*} delete\+Players (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{current\+Player}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{num\+Of\+Players\+Left}{}\end{DoxyParamCaption})}
+
+
+
+Eliminates players with 0 or fewer health points and updates the circular list of players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Player} & Pointer to the current player in the list. \\
+\hline
+{\em num\+Of\+Players\+Left} & Pointer to the number of players left in the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the next player in the circular list after the elimination process. 
+\end{DoxyReturn}
+\Hypertarget{project1_8c_a14d596721de741d0ca0ab4bd4ceb1e78}\index{project1.c@{project1.c}!getInput@{getInput}}
+\index{getInput@{getInput}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{getInput()}{getInput()}}
+{\footnotesize\ttfamily \label{project1_8c_a14d596721de741d0ca0ab4bd4ceb1e78} 
+char get\+Input (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{current\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Asks the player if they want to flip their face-\/down card. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Player} & Pointer to the current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}Y\textquotesingle{} or \textquotesingle{}N\textquotesingle{} based on the player\textquotesingle{}s input. 
+\end{DoxyReturn}
+\Hypertarget{project1_8c_a42a7ebee71b92a435480c1468111c7af}\index{project1.c@{project1.c}!giveCards@{giveCards}}
+\index{giveCards@{giveCards}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{giveCards()}{giveCards()}}
+{\footnotesize\ttfamily \label{project1_8c_a42a7ebee71b92a435480c1468111c7af} 
+void give\+Cards (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{first\+Player}{, }\item[{struct \mbox{\hyperlink{structcard}{card}}}]{deck}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Deals two cards (face-\/up and face-\/down) to each player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Pointer to the first player in the circular list. \\
+\hline
+{\em deck} & The deck of cards to distribute. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{project1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{project1.c@{project1.c}!main@{main}}
+\index{main@{main}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{project1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{project1_8c_a0e594b12de7b9884c6332454b1fd5df0}\index{project1.c@{project1.c}!pickPlayer@{pickPlayer}}
+\index{pickPlayer@{pickPlayer}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{pickPlayer()}{pickPlayer()}}
+{\footnotesize\ttfamily \label{project1_8c_a0e594b12de7b9884c6332454b1fd5df0} 
+struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*} pick\+Player (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{first\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Selects a random player to start the next turn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Pointer to the first player in the circular list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the selected player. 
+\end{DoxyReturn}
+\Hypertarget{project1_8c_a1bd20d77668c7c4fa9a0af3f657acd6f}\index{project1.c@{project1.c}!printDeck@{printDeck}}
+\index{printDeck@{printDeck}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{printDeck()}{printDeck()}}
+{\footnotesize\ttfamily \label{project1_8c_a1bd20d77668c7c4fa9a0af3f657acd6f} 
+void print\+Deck (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcard}{card}}}]{deck}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Prints the entire deck of cards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & An array of card structures representing the deck. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{project1_8c_a4b5da8954bdf65561f8bc5812a3e8113}\index{project1.c@{project1.c}!printPlayersProperties@{printPlayersProperties}}
+\index{printPlayersProperties@{printPlayersProperties}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{printPlayersProperties()}{printPlayersProperties()}}
+{\footnotesize\ttfamily \label{project1_8c_a4b5da8954bdf65561f8bc5812a3e8113} 
+void print\+Players\+Properties (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{first\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Prints the properties (ID, hp, cards) of all players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Pointer to the first player in the circular list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{project1_8c_ac4cbac787826b84b2252d3efea5e73c0}\index{project1.c@{project1.c}!resetAbility@{resetAbility}}
+\index{resetAbility@{resetAbility}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{resetAbility()}{resetAbility()}}
+{\footnotesize\ttfamily \label{project1_8c_ac4cbac787826b84b2252d3efea5e73c0} 
+void reset\+Ability (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{first\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Resets the \textquotesingle{}revealed\+Card\textquotesingle{} ability of all players to 0 (not revealed). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Pointer to the first player in the circular list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{project1_8c_aea7f4291f20fc6e11c2a1ae8afafba1a}\index{project1.c@{project1.c}!shuffleDeck@{shuffleDeck}}
+\index{shuffleDeck@{shuffleDeck}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{shuffleDeck()}{shuffleDeck()}}
+{\footnotesize\ttfamily \label{project1_8c_aea7f4291f20fc6e11c2a1ae8afafba1a} 
+void shuffle\+Deck (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcard}{card}}}]{deck}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Shuffles the deck of cards randomly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & The deck of cards to shuffle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{project1_8c_a1a7c7980bad75a726612c987f2d42431}\index{project1.c@{project1.c}!updateGame@{updateGame}}
+\index{updateGame@{updateGame}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{updateGame()}{updateGame()}}
+{\footnotesize\ttfamily \label{project1_8c_a1a7c7980bad75a726612c987f2d42431} 
+void update\+Game (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structplayer}{player}} \texorpdfstring{$\ast$}{*}}]{first\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Updates the game state for each player\textquotesingle{}s turn. 
+
+This function applies the effect of the face-\/up card, asks the player if they want to flip the face-\/down card, and applies its effect if flipped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Pointer to the first player in the circular list. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{project1_8c_a175a8104e5b8135d7e8492cc2d258c2e}\index{project1.c@{project1.c}!hpOnTable@{hpOnTable}}
+\index{hpOnTable@{hpOnTable}!project1.c@{project1.c}}
+\doxysubsubsection{\texorpdfstring{hpOnTable}{hpOnTable}}
+{\footnotesize\ttfamily \label{project1_8c_a175a8104e5b8135d7e8492cc2d258c2e} 
+int hp\+On\+Table = 0}
+
